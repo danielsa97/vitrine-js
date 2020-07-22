@@ -8,7 +8,11 @@
                  v-if="Object.keys(product).length">
                 <div class="v-row">
                     <div class="v-card">
-                        <img :src="product.image.extraLarge" class="v-img-fluid v-rounded">
+                        <img :src="product.image.extraLarge"
+                             @load="removeLoading"
+                             ref="image"
+                             :alt="product.name"
+                             class="v-img-fluid v-loading v-rounded">
                     </div>
                     <div class="v-detail-column">
                         <h3>{{product.name}}</h3>
@@ -63,13 +67,17 @@
             }
         },
         methods: {
+            removeLoading({target}) {
+                target.classList.remove('v-loading');
+            },
             show(product) {
                 this.product = product;
                 this.$refs.modal.classList.add('v-show-modal');
             },
             hidden() {
                 this.$refs.modal.classList.remove('v-show-modal');
-
+                Object.assign(this.$data, this.$options.data.apply(this));
+                this.$refs.image.classList.add('v-loading');
             }
         }
     }

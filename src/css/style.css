@@ -125,12 +125,41 @@
 .v-img-fluid {
     width: 92%;
     height: auto;
+    min-height: 150px;
+    background-color: #babbbc;
     margin: 4%;
     position: relative;
     transition: margin 150ms linear, width 150ms linear;
 }
 
+.v-loading {
+    animation: v-hintloading 2s ease-in-out 0s infinite reverse;
+    -webkit-animation: v-hintloading 2s ease-in-out 0s infinite reverse;
+}
 
+@keyframes v-hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@-webkit-keyframes v-hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
 .v-money {
     font-size: 25px;
 }
