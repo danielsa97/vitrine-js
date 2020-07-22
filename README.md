@@ -144,6 +144,6 @@ ao design do site.
 API padrão(https://blackbox-v1-submarino.b2w.io/defer/produto/1708602357?pfm_carac=livro).
 
 
-**Daniel de Sá** 
-[contato@danieldesa.com](contato@danieldesa.com)
+**Daniel de Sá** \
+[contato@danieldesa.com](contato@danieldesa.com)\
 https://danieldesa.com
