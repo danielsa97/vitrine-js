@@ -3,7 +3,7 @@
         <div class="v-rating" v-if="product.ratingAverage">
             &#x2605;{{parseFloat(product.ratingAverage).toFixed(1)}}
         </div>
-        <img :src="product.image.large" class="v-img-fluid v-rounded">
+        <img :src="product.image.large" class="v-img-fluid v-rounded" loading="lazy">
         <div class="v-text-center v-details">
             <button class="v-btn" ref="btn_detail" @click="$emit('detail', product)">Detalhes</button>
         </div>
@@ -14,7 +14,7 @@
             <div>
                 R$<span class="v-money"> {{product.offerPrice}}</span>
             </div>
-            <b>LOJA:</b> {{product.sellerName}}
+            <b>Loja:</b> {{product.sellerName}}
         </div>
     </div>
 </template>
