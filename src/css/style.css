@@ -1,0 +1,229 @@
+/* GENERAL */
+.v-bg-light {
+    background: #f8f9fa;
+}
+
+v-table {
+    border: none;
+}
+
+.v-justify-content-center {
+    justify-content: center;
+}
+
+.v-text-white {
+    color: #ffffff;
+}
+
+.v-text-yellow {
+    color: #ffc107;
+}
+
+
+.v-text-center {
+    text-align: center;
+}
+
+.v-text-right {
+    text-align: right;
+}
+
+.v-form-control {
+    height: 36px;
+    width: 100%;
+    padding: 6px;
+    font-size: 15px;
+    -webkit-appearance: none;
+    border: 1px solid #dddddd;
+}
+
+.v-btn {
+    background: #007bff;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: #ffffff;
+}
+
+.v-outline-none {
+    outline: none;
+}
+
+.v-rounded {
+    border-radius: 4px;
+}
+
+.v-border {
+    border: 2px solid #dddddd;
+}
+
+/* GRID */
+.v-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.v-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* SEARCH COMPONENT*/
+
+.search-box {
+    width: 50%;
+}
+
+/* CARD COMPONENT*/
+
+.v-card {
+    width: 25%;
+    margin: 1%;
+}
+
+.v-card:hover > .v-img-fluid {
+    margin: 0;
+    width: 100%;
+}
+
+.v-card:hover > .v-details button {
+    width: 70%;
+}
+
+
+.v-img-fluid {
+    width: 92%;
+    height: auto;
+    margin: 4%;
+    transition: margin 150ms linear, width 150ms linear;
+}
+
+
+.v-money {
+    font-size: 25px;
+}
+
+.v-details button {
+    width: 50%;
+    transition: width 300ms ease;
+}
+
+.v-rating {
+    position: absolute;
+    margin-top: 10px;
+    border-radius: 0 4px 4px 0;
+    font-size: 20px;
+    background: gold;
+    padding: 5px;
+}
+
+.v-info {
+    font-weight: bold;
+    font-size: 12px;
+    height: 150px;
+    padding: 10px;
+}
+
+/*DETAIL COMPONENT*/
+.v-overflow-y-auto {
+    overflow-y: auto !important;
+    max-height: 400px;
+}
+
+.v-modal {
+    position: fixed;
+    height: 80%;
+    min-height: 500px;
+    width: 90%;
+    z-index: 1000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: top 300ms, opacity 300ms ease, visibility 300ms ease;
+}
+
+.v-show-modal {
+    opacity: 1;
+    top: 5%;
+    visibility: visible;
+}
+
+.v-btn-close {
+    background: none;
+    font-size: 50px;
+}
+
+.v-detail-column {
+    width: 70%;
+    max-height: 300px;
+}
+
+/*PAGINATOR COMPONENT*/
+
+.v-paginator {
+    background: #007bff;
+}
+
+.v-disabled {
+    opacity: 0.6;
+}
+
+.v-paginator button {
+    text-decoration: none;
+    border: none;
+    box-shadow: none;
+    font-weight: bold;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 10px 0 10px;
+    background: none;
+}
+
+
+/*TRANSITIONS*/
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+    opacity: 0;
+}
+
+.slide-fade-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+@media all and (max-width: 600px) {
+
+    .v-card {
+        width: 42%;
+        margin: 2%;
+    }
+
+    .search-box {
+        width: 70%;
+    }
+}
