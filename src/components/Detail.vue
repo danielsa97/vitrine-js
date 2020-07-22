@@ -3,32 +3,34 @@
         <div class="v-text-right">
             <button @click="hidden" class="v-btn v-btn-close  v-outline-none">&times;</button>
         </div>
-        <div :style="colorTextModal ? `color:${colorTextModal}` : null" class="v-container v-overflow-y-auto v-text-white"
-             v-if="Object.keys(product).length">
-            <div class="v-row">
-                <div class="v-card">
-                    <img :src="product.image.extraLarge" class="v-img-fluid v-rounded">
-                </div>
-                <div class="v-detail-column">
-                    <h3>{{product.name}}</h3>
-                    LOJA: {{product.sellerName}}<br>
-                    <div v-if="product.ratingAverage">
-                        AVALIAÇÃO:
-                        <b class="v-text-yellow">
-                            &#x2605;{{parseFloat(product.ratingAverage).toFixed(1)}}
-                        </b>
+        <div class="v-modal-body">
+            <div :style="colorTextModal ? `color:${colorTextModal}` : null" class="v-container v-text-white"
+                 v-if="Object.keys(product).length">
+                <div class="v-row">
+                    <div class="v-card">
+                        <img :src="product.image.extraLarge" class="v-img-fluid v-rounded">
                     </div>
-                    R$<span class="v-money"> {{product.offerPrice}}</span><br>
-                    <b v-if="product.installment">Em {{product.installment}}</b>
-                    <div>
-                        <h5>FORMAS DE PAGAMENTO DISPONÍVEIS</h5>
-                        <table class="v-table">
-                            <tr v-for="(type, idx) in product.paymentOptions" :key="idx">
-                                <th class="v-text-right">{{idx}}</th>
-                                <td>{{type.price | decimalToMoney}}</td>
-                            </tr>
-                        </table>
+                    <div class="v-detail-column">
+                        <h3>{{product.name}}</h3>
+                        LOJA: {{product.sellerName}}<br>
+                        <div v-if="product.ratingAverage">
+                            AVALIAÇÃO:
+                            <b class="v-text-yellow">
+                                &#x2605;{{parseFloat(product.ratingAverage).toFixed(1)}}
+                            </b>
+                        </div>
+                        R$<span class="v-money"> {{product.offerPrice}}</span><br>
+                        <b v-if="product.installment">Em {{product.installment}}</b>
+                        <div>
+                            <h5>FORMAS DE PAGAMENTO DISPONÍVEIS</h5>
+                            <table class="v-table">
+                                <tr v-for="(type, idx) in product.paymentOptions" :key="idx">
+                                    <th class="v-text-right">{{idx}}</th>
+                                    <td>{{type.price | decimalToMoney}}</td>
+                                </tr>
+                            </table>
 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -67,6 +69,7 @@
             },
             hidden() {
                 this.$refs.modal.classList.remove('v-show-modal');
+
             }
         }
     }

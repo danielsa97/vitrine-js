@@ -63,7 +63,7 @@
     background: #007bff;
     border: none;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 10px;
     font-weight: bold;
     border-radius: 4px;
     color: #ffffff;
@@ -125,6 +125,7 @@
     width: 92%;
     height: auto;
     margin: 4%;
+    position: relative;
     transition: margin 150ms linear, width 150ms linear;
 }
 
@@ -157,23 +158,27 @@
 
 .v-modal {
     position: fixed;
-    height: 80%;
-    width: 90%;
-    z-index: 1200;
+    height: 90%;
+    left: 0;
     top: 0;
     bottom: 0;
-    left: 0;
     right: 0;
     margin: auto;
     background: rgba(0, 0, 0, 0.9);
     opacity: 0;
     visibility: hidden;
-    transition: top 300ms, opacity 300ms ease, visibility 300ms ease;
+    transition: opacity 300ms ease, visibility 300ms ease;
+}
+
+.v-modal-body {
+    position: relative;
+    overflow-y: auto;
+    height: 90%;
 }
 
 .v-show-modal {
     opacity: 1;
-    top: 5%;
+    z-index: 1500;
     visibility: visible;
 }
 
@@ -184,8 +189,7 @@
 
 .v-detail-column {
     width: 60%;
-    height: 100%;
-    max-height: 400px;
+    position: relative;
     padding: 10px;
 }
 
@@ -257,21 +261,12 @@
     }
 
     .v-modal {
-        height: 100%;
-        width: 100%;
-    }
-
-    .v-show-modal {
-        opacity: 1;
-        top: 0;
-        position: -webkit-sticky; /* Safari */
-        position: sticky;
-        visibility: visible;
+        height: 100% !important;
     }
 
     .v-detail-column {
         width: 90%;
         height: 100%;
-        min-height: 350px;
+        max-height: 350px;
     }
 }
