@@ -1,24 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 /* GENERAL */
 .v-bg-light {
     background: #f8f9fa;
 }
 
-v-table {
-    border: none;
-}
-
-.v-justify-content-center {
-    justify-content: center;
+.v-bg-blue {
+    background: #007bff;
 }
 
 .v-text-white {
     color: #ffffff;
 }
 
+.v-table {
+    border: none;
+}
+
+.float-right {
+    float: right;
+}
+
+.v-no-padding {
+    padding: 0 !important;
+}
+
+.v-overflow-y-auto {
+    overflow-y: auto !important;
+}
+
+.v-overflow-y-scroll {
+    overflow-y: scroll !important;
+}
+
+.v-justify-content-center {
+    justify-content: center;
+}
+
+
 .v-text-yellow {
     color: #ffc107;
 }
-
 
 .v-text-center {
     text-align: center;
@@ -66,12 +88,14 @@ v-table {
     margin: 0 auto;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .v-row {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 1rem;
+    padding-left: -1%;
+    padding-right: -1%;
 }
 
 /* SEARCH COMPONENT*/
@@ -83,8 +107,8 @@ v-table {
 /* CARD COMPONENT*/
 
 .v-card {
-    width: 25%;
-    margin: 1%;
+    width: 28%;
+    margin: 1% 1%;
 }
 
 .v-card:hover > .v-img-fluid {
@@ -126,22 +150,16 @@ v-table {
 .v-info {
     font-weight: bold;
     font-size: 12px;
-    height: 150px;
     padding: 10px;
 }
 
 /*DETAIL COMPONENT*/
-.v-overflow-y-auto {
-    overflow-y: auto !important;
-    max-height: 400px;
-}
 
 .v-modal {
     position: fixed;
     height: 80%;
-    min-height: 500px;
     width: 90%;
-    z-index: 1000;
+    z-index: 1200;
     top: 0;
     bottom: 0;
     left: 0;
@@ -161,19 +179,18 @@ v-table {
 
 .v-btn-close {
     background: none;
-    font-size: 50px;
+    font-size: 30px;
 }
 
 .v-detail-column {
-    width: 70%;
-    max-height: 300px;
+    width: 60%;
+    height: 100%;
+    max-height: 400px;
+    padding: 10px;
 }
 
 /*PAGINATOR COMPONENT*/
 
-.v-paginator {
-    background: #007bff;
-}
 
 .v-disabled {
     opacity: 0.6;
@@ -218,12 +235,43 @@ v-table {
 
 @media all and (max-width: 600px) {
 
+    .v-container {
+        width: 100%;
+        margin: 0 auto;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .v-details button {
+        width: 90%;
+        transition: width 300ms ease;
+    }
+
     .v-card {
-        width: 42%;
-        margin: 2%;
+        width: 48%;
     }
 
     .search-box {
         width: 70%;
+    }
+
+    .v-modal {
+        height: 100%;
+        width: 100%;
+    }
+
+    .v-show-modal {
+        opacity: 1;
+        top: 0;
+        position: -webkit-sticky; /* Safari */
+        position: sticky;
+        visibility: visible;
+    }
+
+    .v-detail-column {
+        width: 90%;
+        height: 100%;
+        min-height: 350px;
     }
 }

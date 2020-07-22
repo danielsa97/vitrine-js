@@ -1,7 +1,7 @@
 <template>
-    <div class="v-modal v-rounded" ref="modal">
-        <div class="v-text-right" @click="hidden">
-            <button class="v-btn v-btn-close v-outline-none">&times;</button>
+    <div class="v-modal" ref="modal" tabindex="1">
+        <div class="v-text-right">
+            <button @click="hidden" class="v-btn v-btn-close  v-outline-none">&times;</button>
         </div>
         <div :style="colorTextModal ? `color:${colorTextModal}` : null" class="v-container v-overflow-y-auto v-text-white"
              v-if="Object.keys(product).length">

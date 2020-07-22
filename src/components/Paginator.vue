@@ -1,5 +1,5 @@
 <template>
-    <div class="v-paginator v-rounded" ref="paginator">
+    <div class="v-paginator v-bg-blue v-rounded" ref="paginator">
         <button :class="['v-outline-none',  value === 0 ? 'v-disabled' : null]" :disabled="value === 0"
                 @click.prevent="prev">
             &laquo;
@@ -21,7 +21,7 @@
             }
         },
         mounted() {
-            let { mainColor} = this.$root.$options?.config;
+            let {mainColor} = this.$root.$options?.config;
             if (mainColor) this.$refs.paginator.style.background = mainColor;
         },
         methods: {
