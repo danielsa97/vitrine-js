@@ -1,14 +1,12 @@
 <template>
     <div class="v-modal" ref="modal" tabindex="1">
-        <div class="v-text-right">
-            <button @click="hidden" class="v-btn v-btn-close  v-outline-none">&times;</button>
-        </div>
+        <button @click="hidden" class="v-btn v-btn-close  v-outline-none">&times;</button>
         <div class="v-modal-body">
             <div :style="colorTextModal ? `color:${colorTextModal}` : null" class="v-container v-text-white"
                  v-if="Object.keys(product).length">
                 <div class="v-row">
                     <div class="v-card">
-                        <img :src="product.image.extraLarge"
+                        <img :src="image"
                              @load="removeLoading"
                              ref="image"
                              :alt="product.name"
@@ -29,7 +27,7 @@
                             <h5>FORMAS DE PAGAMENTO DISPONÍVEIS</h5>
                             <table class="v-table">
                                 <tr v-for="(type, idx) in product.paymentOptions" :key="idx">
-                                    <th class="v-text-right">{{idx}}</th>
+                                    <th class="v-text-right">{{idx.replace('_', ' ')}}</th>
                                     <td>{{type.price | decimalToMoney}}</td>
                                 </tr>
                             </table>
@@ -64,6 +62,9 @@
         computed: {
             colorTextModal() {
                 return this.$root.$options?.config?.colorTextModal;
+            },
+            image() {
+                return this.product?.image?.extraLarge ?? this.product?.image?.large;
             }
         },
         methods: {
