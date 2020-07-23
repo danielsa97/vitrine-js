@@ -11,7 +11,7 @@
                           :product="product"
                           @detail="$refs.product_details.show($event)"/>
                 </transition-group>
-                <div class="v-row v-justify-content-center">
+                <div class="v-row v-mt-2 v-justify-content-center">
                     <paginator v-model="startPreview" :length="products.length"/>
                 </div>
             </div>

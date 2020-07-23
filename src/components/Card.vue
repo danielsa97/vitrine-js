@@ -1,7 +1,7 @@
 <template>
     <div ref="card" class="v-card v-rounded v-bg-light">
         <div class="v-rating" v-if="product.ratingAverage">
-            &#x2605;{{parseFloat(product.ratingAverage).toFixed(1)}}
+            <span class="star">&#x2605;</span>{{parseFloat(product.ratingAverage).toFixed(1)}}
         </div>
         <img :src="product.image.large" :alt="product.name" ref="image" class="v-img-fluid v-loading v-rounded"
              loading="lazy">

@@ -5,6 +5,10 @@
     background: #f8f9fa;
 }
 
+.v-mt-2 {
+    margin-top: 2rem;
+}
+
 .v-bg-blue {
     background: #007bff;
 }
@@ -129,7 +133,7 @@
     background-color: #babbbc;
     margin: 4%;
     position: relative;
-    transition: margin 150ms linear, width 150ms linear;
+    transition: margin 150ms linear, width 150ms linear, height 150ms linear;
 }
 
 .v-loading {
@@ -160,6 +164,7 @@
         opacity: 0.5;
     }
 }
+
 .v-money {
     font-size: 25px;
 }
@@ -176,7 +181,11 @@
     border-radius: 0 4px 4px 0;
     font-size: 20px;
     background: gold;
-    padding: 5px;
+    padding: 0 5px;
+}
+
+.v-rating .star {
+    font-size: 25px;
 }
 
 .v-info {
