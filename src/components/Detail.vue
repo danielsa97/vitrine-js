@@ -1,7 +1,7 @@
 <template>
     <div class="v-modal" ref="modal" tabindex="1">
         <button @click="hidden" class="v-btn v-btn-close  v-outline-none">&times;</button>
-        <div class="v-modal-body">
+        <div class="v-modal-body v-p-1">
             <div :style="colorTextModal ? `color:${colorTextModal}` : null" class="v-container v-text-white"
                  v-if="Object.keys(product).length">
                 <div class="v-row">
@@ -10,13 +10,13 @@
                              @load="removeLoading"
                              ref="image"
                              :alt="product.name"
-                             class="v-img-fluid v-loading v-rounded">
+                             class="v-img-fluid v-w-100 v-loading v-rounded">
                     </div>
                     <div class="v-detail-column">
                         <h3>{{product.name}}</h3>
-                        LOJA: {{product.sellerName}}<br>
+                        Loja: {{product.sellerName}}<br>
                         <div v-if="product.ratingAverage">
-                            AVALIAÇÃO:
+                            Avaliação:
                             <b class="v-text-yellow">
                                 &#x2605;{{parseFloat(product.ratingAverage).toFixed(1)}}
                             </b>
@@ -31,7 +31,6 @@
                                     <td>{{type.price | decimalToMoney}}</td>
                                 </tr>
                             </table>
-
                         </div>
                     </div>
                 </div>

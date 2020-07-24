@@ -1,12 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
+/* GRID */
+.v-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+.v-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.v-card {
+    width: 30%;
+    margin-bottom: 1rem;
+}
+
 /* GENERAL */
 .v-bg-light {
     background: #f8f9fa;
 }
 
+.v-p-1 {
+    padding: 1rem;
+}
+
+.v-btn-disabled {
+    opacity: 0.6;
+}
+
 .v-mt-2 {
     margin-top: 2rem;
+}
+
+.v-mb-2 {
+    margin-bottom: 2rem;
 }
 
 .v-bg-blue {
@@ -21,26 +52,13 @@
     border: none;
 }
 
-.float-right {
-    float: right;
-}
-
-.v-no-padding {
-    padding: 0 !important;
-}
-
-.v-overflow-y-auto {
-    overflow-y: auto !important;
-}
-
-.v-overflow-y-scroll {
-    overflow-y: scroll !important;
-}
-
 .v-justify-content-center {
     justify-content: center;
 }
 
+.v-justify-content-space-around {
+    justify-content: space-around;
+}
 
 .v-text-yellow {
     color: #ffc107;
@@ -55,7 +73,7 @@
 }
 
 .v-form-control {
-    height: 36px;
+    height: 34px;
     width: 100%;
     padding: 6px;
     font-size: 15px;
@@ -67,7 +85,8 @@
     background: #007bff;
     border: none;
     cursor: pointer;
-    padding: 10px;
+    height: 36px;
+    font-size: 15px;
     font-weight: bold;
     border-radius: 4px;
     color: #ffffff;
@@ -81,44 +100,30 @@
     border-radius: 4px;
 }
 
+.v-rounded-top {
+    border-radius: 4px;
+}
+
 .v-border {
     border: 2px solid #dddddd;
 }
 
-/* GRID */
-.v-container {
-    width: 90%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.v-row {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: -1%;
-    padding-right: -1%;
+.v-w-100 {
+    margin: 0 !important;
+    width: 100% !important;
 }
 
 /* SEARCH COMPONENT*/
 
 .search-box {
     width: 50%;
-    margin-bottom: 1rem;
 }
 
 /* CARD COMPONENT*/
 
-.v-card {
-    width: 28%;
-    margin: 1% 1%;
-}
-
 .v-card:hover > .v-img-fluid {
-    margin: 0;
-    width: 100%;
+    margin: 2%;
+    width: 96%;
 }
 
 .v-card:hover > .v-details button {
@@ -127,11 +132,11 @@
 
 
 .v-img-fluid {
-    width: 92%;
+    width: 90%;
     height: auto;
     min-height: 150px;
     background-color: #babbbc;
-    margin: 4%;
+    margin: 5%;
     position: relative;
     transition: margin 150ms linear, width 150ms linear, height 150ms linear;
 }
@@ -141,36 +146,13 @@
     -webkit-animation: v-hintloading 2s ease-in-out 0s infinite reverse;
 }
 
-@keyframes v-hintloading {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.5;
-    }
-}
-
-@-webkit-keyframes v-hintloading {
-    0% {
-        opacity: 0.5;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0.5;
-    }
-}
-
 .v-money {
     font-size: 25px;
 }
 
 .v-details button {
-    width: 50%;
+    width: 60%;
+    outline: 0;
     transition: width 300ms ease;
 }
 
@@ -229,23 +211,17 @@
     font-size: 30px;
     width: 50px;
     height: 50px;
-    right: 25px;
+    right: 1rem;
     z-index: 1600;
     position: absolute;
 }
 
 .v-detail-column {
-    width: 60%;
-    position: relative;
-    padding: 10px;
+    max-width: 60%;
+    padding: 0 5% 5%;
 }
 
 /*PAGINATOR COMPONENT*/
-
-
-.v-disabled {
-    opacity: 0.6;
-}
 
 .v-paginator button {
     text-decoration: none;
@@ -261,7 +237,31 @@
 }
 
 
-/*TRANSITIONS*/
+/* ANIMATION AND TRANSITIONS */
+@keyframes v-hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+@-webkit-keyframes v-hintloading {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
 .fade-enter-active, .fade-leave-active {
     transition: opacity .5s;
 }
@@ -286,14 +286,6 @@
 
 @media all and (max-width: 600px) {
 
-    .v-container {
-        width: 100%;
-        margin: 0 auto;
-        padding-bottom: 1rem;
-        padding-top: 1rem;
-        font-family: 'Open Sans', sans-serif;
-    }
-
     .v-details button {
         width: 90%;
         transition: width 300ms ease;
@@ -312,7 +304,7 @@
     }
 
     .v-detail-column {
-        width: 90%;
+        width: 100%;
         height: 100%;
         max-height: 350px;
     }

@@ -1,9 +1,9 @@
 <template>
-    <div ref="card" class="v-card v-rounded v-bg-light">
+    <div ref="card" class="v-card v-rounded v-bg-light" v-if="Object.keys(product).length">
         <div class="v-rating" v-if="product.ratingAverage">
             <span class="star">&#x2605;</span>{{parseFloat(product.ratingAverage).toFixed(1)}}
         </div>
-        <img :src="product.image.large" :alt="product.name" ref="image" class="v-img-fluid v-loading v-rounded"
+        <img :src="image" :alt="product.name" @load="removeLoading" ref="image" class="v-img-fluid v-loading v-rounded"
              loading="lazy">
         <div class="v-text-center v-details">
             <button class="v-btn" ref="btn_detail" @click="$emit('detail', product)">Detalhes</button>
@@ -30,12 +30,19 @@
             }
         },
         mounted() {
-            this.$refs.image.addEventListener('load', ({target}) => {
-                target.classList.remove('v-loading');
-            });
             let {bgCard, mainColor} = this.$root.$options?.config;
             if (bgCard) this.$refs.card.style.background = bgCard;
             if (mainColor) this.$refs.btn_detail.style.background = mainColor;
+        },
+        methods: {
+            removeLoading({target}) {
+                target.classList.remove('v-loading');
+            }
+        },
+        computed: {
+            image() {
+                return this.product?.image?.large ?? this.product?.image?.extraLarge;
+            }
         }
     }
 </script>

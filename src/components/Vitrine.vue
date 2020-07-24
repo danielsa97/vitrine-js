@@ -3,15 +3,15 @@
         <detail ref="product_details"/>
         <transition name="fade">
             <div class="v-container" v-if="products.length">
-                <div class="v-row v-justify-content-center">
+                <div class="v-row v-mb-2 v-justify-content-center">
                     <search :products="products" @search="filterPreview"/>
                 </div>
-                <transition-group name="slide-fade" class="v-row v-justify-content-center">
+                <transition-group name="slide-fade" class="v-row v-justify-content-space-around">
                     <card v-for="product in preview" :key="product.id"
                           :product="product"
                           @detail="$refs.product_details.show($event)"/>
                 </transition-group>
-                <div class="v-row v-mt-2 v-justify-content-center">
+                <div class="v-row v-justify-content-center">
                     <paginator v-model="startPreview" :length="products.length"/>
                 </div>
             </div>

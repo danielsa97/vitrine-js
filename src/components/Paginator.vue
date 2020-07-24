@@ -1,9 +1,9 @@
 <template>
     <div class="v-paginator v-bg-blue v-rounded" ref="paginator">
-        <button class="btn v-outline-none v-disabled" disabled>
+        <button class="v-outline-none v-btn-disabled" disabled>
             {{currentPage}} / {{totalPage}}
         </button>
-        <button :class="['v-outline-none',  value === 0 ? 'v-disabled' : null]"
+        <button :class="['v-outline-none',  value === 0 ? 'v-btn-disabled' : null]"
                 :disabled="value === 0"
                 @click.prevent="first">
             &laquo;
@@ -14,7 +14,7 @@
         <button v-if="currentPage + 1  <= totalPage" class="v-outline-none" @click.prevent="next">
             &rsaquo;
         </button>
-        <button :class="['v-outline-none',  length - value <= 9 ? 'v-disabled' : null]" @click.prevent="last"
+        <button :class="['v-outline-none',  length - value <= 9 ? 'v-btn-disabled' : null]" @click.prevent="last"
                 :disabled="length - value <= 9"> &raquo;
         </button>
     </div>
